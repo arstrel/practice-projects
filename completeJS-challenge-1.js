@@ -3,12 +3,15 @@
 
 const mark = {
   height: 1.76,
-  weight: 72
+  weight: 72,
+  realName: 'Joanne Brightmind',
+ 
 }
 
 const john = {
   height: 1.87,
-  weight: 80
+  weight: 80,
+  realName: 'Jefferson Guggenheimen'
 }
 
 const compareBMI = (mark, john) => {
