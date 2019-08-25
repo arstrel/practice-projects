@@ -52,6 +52,8 @@ const nextQuestion = () => {
     //prompt by default returns a string 
     // + converts it to a number 
     draftedQuestion.checkAnswer(+answer, score)
+
+    //recursion
     nextQuestion();
   }
 }
