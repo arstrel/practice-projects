@@ -19,3 +19,4 @@ const ages = arrayCalc(years, calcAge);
 const fullJapan = arrayCalc(ages, isFullAge.bind(this, 20))
 console.log(ages) 
 console.log(fullJapan) 
+
