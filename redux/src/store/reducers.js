@@ -15,7 +15,10 @@ export const skiDay = (state=null, action) => (
 )
 
 export const allSkiDays = (state=[], action) => {
-    const hasDayAlready = state.some(skiDay => skiDay.date === action.payload.date)
+    let hasDayAlready;
+    if(action.payload) {
+        hasDayAlready = state.some(skiDay => skiDay.date === action.payload.date)
+    }
     switch (action.type) {
         case C.ADD_DAY:
             return (hasDayAlready) 
