@@ -1,42 +1,21 @@
-import storeFactory from './store'
-import initialState from './initialState.json'
-import {
-   addDay, 
-   removeDay, 
-   setGoal,
-   addError,
-   clearError,
-   changeSuggestions,
-   clearSuggestions,
-   randomGoals
+import React from 'react'
+import ReactDom from 'react-dom'
 
-} from './store/actions'
+import routes from './routes'
+import sampleData from './initialState'
 
-const store = storeFactory(initialState)
 
-store.dispatch(
-   addDay("Havenly", "2018-12-22")
-)
 
-store.dispatch(
-   removeDay("2018-12-8")
-)
+const initialState = (localStorage["redux-store"]) 
+                     ? JSON.parse(localStorage["redux-store"]) 
+                     : sampleData
 
-store.dispatch(
-   setGoal(9)
-)
-store.dispatch(
-   addError("Something went wrong")
-)
-store.dispatch(
-   clearError(0)
-)
-store.dispatch(
-   changeSuggestions(['One', 'two', 'another'])
-)
-store.dispatch(
-   clearSuggestions()
-)
-store.dispatch(
-   randomGoals()
+const saveState = () => 
+    localStorage["redux-store"] = JSON.stringify(store.getState())
+
+window.React = React
+
+ReactDom.render(
+	routes,
+  document.getElementById('react-container')
 )
