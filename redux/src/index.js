@@ -1,48 +1,42 @@
-import C from './constants'
 import storeFactory from './store'
+import initialState from './initialState.json'
+import {
+   addDay, 
+   removeDay, 
+   setGoal,
+   addError,
+   clearError,
+   changeSuggestions,
+   clearSuggestions,
+   randomGoals
 
-const initialState = localStorage['redux-store'] 
-                     ? JSON.parse(localStorage['redux-store'])
-                     : {}
-
-const saveState = () => {
-   const state = JSON.stringify(store.getState())
-   localStorage['redux-store'] = state
-}
+} from './store/actions'
 
 const store = storeFactory(initialState)
 
-store.subscribe(saveState)
+store.dispatch(
+   addDay("Havenly", "2018-12-22")
+)
 
-store.dispatch({
-   type: C.ADD_DAY,
-   payload: {
-      "resort": "Mt Newby",
-      "date": "2018-11-11",
-      "powder": true,
-      "backcountry": false
-   }
-})
+store.dispatch(
+   removeDay("2018-12-8")
+)
 
-store.dispatch({
-   type: C.ADD_DAY,
-   payload: {
-      "resort": "Mt Freshly",
-      "date": "2018-11-12",
-      "powder": false,
-      "backcountry": true
-   }
-})
-
-store.dispatch({
-   type: C.ADD_DAY,
-   payload: {
-      "resort": "Squaw Valley",
-      "date": "2018-11-13",
-      "powder": false,
-      "backcountry": false
-   }
-})
-
-
-
+store.dispatch(
+   setGoal(9)
+)
+store.dispatch(
+   addError("Something went wrong")
+)
+store.dispatch(
+   clearError(0)
+)
+store.dispatch(
+   changeSuggestions(['One', 'two', 'another'])
+)
+store.dispatch(
+   clearSuggestions()
+)
+store.dispatch(
+   randomGoals()
+)

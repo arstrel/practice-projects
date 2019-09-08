@@ -1,5 +1,5 @@
-import C from '../constants'
 import appReducer from './reducers'
+import thunk from 'redux-thunk'
 import {createStore, applyMiddleware} from 'redux'
 
 //simple middleware example
@@ -19,7 +19,8 @@ const consoleMessages = (store) => (next) => (action) => {
         ski days: ${allSkiDays.length}
         goals: ${goal}
         fetching: ${resortNames.fetching}
-        errors: ${errors.length}
+        errors: ${errors}
+        suggestions: ${resortNames.suggestions}
 
        `);
 
@@ -29,5 +30,5 @@ const consoleMessages = (store) => (next) => (action) => {
  }
 
 export default (initialState={}) => {
-    return applyMiddleware(consoleMessages)(createStore)(appReducer, initialState)
+    return applyMiddleware(thunk, consoleMessages)(createStore)(appReducer, initialState)
 }
