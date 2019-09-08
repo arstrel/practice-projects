@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom'
 import {FaHomeIcon} from 'react-icons/fa'
 import {FaAddDayIcon} from 'react-icons/fa'

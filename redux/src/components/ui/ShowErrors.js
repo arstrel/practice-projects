@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types'
 import {FaCloseButton} from 'react-icons/fa'
 import '../../stylesheets/ShowErrors.scss'

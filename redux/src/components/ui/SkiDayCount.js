@@ -1,3 +1,4 @@
+import React from 'react'
 import  PropTypes  from 'prop-types'
 import {MdTerrain} from 'react-icons/md'
 import {TiSnowFlake} from 'react-icons/ti'

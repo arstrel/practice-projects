@@ -1,3 +1,4 @@
+import React from 'react';
 import Menu from './ui/Menu'
 import ShowErrors from './containers/ShowErrors'
 import GoalProgress from './containers/GoalProgress'
